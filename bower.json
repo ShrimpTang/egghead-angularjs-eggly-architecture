@@ -1,0 +1,22 @@
+{
+  "name": "AngularJS-Fundamentals",
+  "version": "0.0.0",
+  "authors": [
+    "tangzx <moumoon711@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "vendor"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "lodash": "~3.10.1",
+    "jquery": "~2.1.4",
+    "angular": "~1.4.6"
+  }
+}
