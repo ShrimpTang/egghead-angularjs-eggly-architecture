@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="MainCtrl">
+<section ui-view></section>
+<button ng-click="c()"></button>
+</body>
+</html>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+<script>
+    var app = angular.module('myApp', ['ui.router']);
+    app.config(function ($stateProvider) {
+        $stateProvider.state('contacts', {
+            template: '<h1>My Contacts</h1>'
+        });
+    });
+    app.controller('MainCtrl', function ($scope,$state) {
+        $scope.c = function () {
+            $state.go('contacts')
+        }
+    });
+</script>

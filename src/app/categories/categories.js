@@ -1,1 +1,1 @@
-angular.module('categories', ['eggly.module.categories']);
+angular.module('categories', ['eggly.models.categories']);
