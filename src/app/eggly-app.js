@@ -3,15 +3,15 @@ angular.module('Eggly', [
     'categories',
     'categories.bookmarks'
 ])
-    .config(function ($stateProvider) {
+    .config(function ($urlRouterProvider ,$stateProvider) {
+        $urlRouterProvider.otherwise('/');
         $stateProvider.state('eggly',
             {
-                url:'/',
-                templateUrl:'app/categories/categories.tmpl.html',
-                controller:'MainCtrl'
+                url:'',
+                abstract:true
             });
     })
-    .controller('MainCtrl', function ($scope) {
+    .controller('MainCtrl', function ($scope,$state) {
         $scope.categories = [
             {"id": 0, "name": "Development"},
             {"id": 1, "name": "Design"},
@@ -42,7 +42,7 @@ angular.module('Eggly', [
 
         function setCurrentCategory(category) {
             $scope.currentCategory = category;
-
+          //  $state.go('eggly.categorise.bookmarks',{category:category.name});
             cancelCreating();
             cancelEditing();
         }
