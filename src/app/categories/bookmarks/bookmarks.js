@@ -9,10 +9,13 @@ angular.module('categories.bookmarks', [
         views: {
             "bookmarks@": {
                 templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html',
-                controller: 'BookMarksCtrl'
+                controller: 'BookMarksListCtrl as bookmarksListCtrl'
             }
         }
     });
-}).controller('BookMarksCtrl', function ($scope,$stateParams) {
-    $scope.currentCategoryName = $stateParams.category;
+}).controller('BookMarksListCtrl', function ($stateParams,BookmarksModel) {
+    var bookmarksListCtrl = this ;
+    bookmarksListCtrl.bookmarks = BookmarksModel.getBookmarks();
+    bookmarksListCtrl.currentCategoryName = $stateParams.category;
+
 });
