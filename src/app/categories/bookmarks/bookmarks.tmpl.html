@@ -6,6 +6,15 @@
     <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}}</a>
 </div>
 <hr/>
+<ui-view>
+    <div ng-if="bookmarksListCtrl.currentCategoryName">
+    <button type="button" class="btn btn-link"  ui-sref="eggly.categorise.bookmarks.create">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create Bookmark
+    </button>
+    </div>
+</ui-view>
+<!--
 <div ng-if="shouldShowCreating()">
     <button type="button" class="btn btn-link" ng-click="startCreating()">
         <span class="glyphicon glyphicon-plus"></span>
@@ -39,4 +48,4 @@
         <button type="submit" class="btn btn-info btn-lg">Save</button>
         <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelEditing()">Cancel</button>
     </form>
-</div>
+</div>-->

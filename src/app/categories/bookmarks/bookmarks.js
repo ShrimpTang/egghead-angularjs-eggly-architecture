@@ -13,9 +13,11 @@ angular.module('categories.bookmarks', [
             }
         }
     });
-}).controller('BookMarksListCtrl', function ($stateParams,BookmarksModel) {
-    var bookmarksListCtrl = this ;
-    bookmarksListCtrl.bookmarks = BookmarksModel.getBookmarks();
+}).controller('BookMarksListCtrl', function ($stateParams, BookmarksModel) {
+    var bookmarksListCtrl = this;
+    BookmarksModel.getBookmarks().then(function (result) {
+        bookmarksListCtrl.bookmarks = result;
+    });
     bookmarksListCtrl.currentCategoryName = $stateParams.category;
 
 });
